@@ -24,3 +24,7 @@ Route::get('/', function () {
 Route::get('/apropos', function () {
     return view('pages/apropos');
 });
+
+Route::get('/services', function () {
+    return view('pages/services');
+});
