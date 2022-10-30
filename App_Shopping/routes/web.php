@@ -22,6 +22,4 @@ Route::get('/', 'App\Http\Controllers\PagesController@home');
 
 Route::get('/apropos', 'App\Http\Controllers\PagesController@apropos');
 
-Route::get('/services', function () {
-    return view('pages/services');
-});
+Route::get('/services', 'App\Http\Controllers\PagesController@services');
