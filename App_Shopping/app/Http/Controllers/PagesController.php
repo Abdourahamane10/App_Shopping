@@ -15,4 +15,9 @@ class PagesController extends Controller
     {
         return view('pages/apropos');
     }
+
+    public function services()
+    {
+        return view('pages/services');
+    }
 }
