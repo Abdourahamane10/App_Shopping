@@ -20,9 +20,7 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', 'App\Http\Controllers\PagesController@home');
 
-Route::get('/apropos', function () {
-    return view('pages/apropos');
-});
+Route::get('/apropos', 'App\Http\Controllers\PagesController@apropos');
 
 Route::get('/services', function () {
     return view('pages/services');
