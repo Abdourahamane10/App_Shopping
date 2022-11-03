@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
 @section('titre')
-  Services
+Services
 @endsection
 
 @section('contenu')
-<div class="jumbotron">
-    <h1>Bienvenu dans la page Services</h1>
+<h1>Bienvenu dans la page Services</h1>
+@foreach ($produits as $produit)
+<div class="well">
+    <h1>{{ $produit->Product_name }}</h1>
 </div>
+@endforeach
+{{ $produits->links() }}
 
 @endsection
