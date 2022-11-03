@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -18,6 +19,9 @@ class PagesController extends Controller
 
     public function services()
     {
-        return view('pages/services');
+        $produits = DB::table('Products')
+            ->orderBy('Product_name', 'asc')
+            ->paginate(1);
+        return view('pages/services')->with('produits', $produits);
     }
 }
