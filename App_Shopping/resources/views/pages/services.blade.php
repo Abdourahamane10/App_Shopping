@@ -8,7 +8,7 @@ Services
 <h1>Bienvenu dans la page Services</h1>
 @foreach ($produits as $produit)
 <div class="well">
-    <h1>{{ $produit->Product_name }}</h1>
+    <h1><a href="/show/{{ $produit->id }}"> {{ $produit->Product_name }}</a></h1>
 </div>
 @endforeach
 {{ $produits->links() }}
