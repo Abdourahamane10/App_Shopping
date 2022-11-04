@@ -24,4 +24,10 @@ class PagesController extends Controller
             ->paginate(1);
         return view('pages/services')->with('produits', $produits);
     }
+
+    public function show($id)
+    {
+        $produit = DB::table('Products')->where('id', $id)->first();
+        return view('pages.show')->with('produit', $produit);
+    }
 }
