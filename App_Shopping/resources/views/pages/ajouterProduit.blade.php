@@ -5,6 +5,12 @@ Sauver produit
 @endsection
 
 @section('contenu')
+@if (Session::has('message'))
+<p class="alert alert-success">
+    {{ Session::get('message') }}
+    {{ Session::put('message', null) }}
+</p>
+@endif
 <form action="{{ url('/sauverproduit') }}" method="POST" class="form_horizontal">
     {{ csrf_field() }}
     <div class="form-group">
