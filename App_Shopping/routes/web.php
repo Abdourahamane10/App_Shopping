@@ -26,6 +26,6 @@ Route::get('/services', 'App\Http\Controllers\PagesController@services');
 
 Route::get('/show/{id}',  'App\Http\Controllers\PagesController@show');
 
-Route::get('/create', 'App\Http\Controllers\PagesController@create');
+Route::get('/create', 'App\Http\Controllers\PagesController@creer');
 
-Route::post('/sauverproduit', 'App\Http\Controllers\PagesController@sauverproduit');
+Route::post('/sauverproduit', 'App\Http\Controllers\PagesController@create');
