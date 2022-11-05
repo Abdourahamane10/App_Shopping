@@ -30,4 +30,13 @@ class PagesController extends Controller
         $produit = DB::table('Products')->where('id', $id)->first();
         return view('pages.show')->with('produit', $produit);
     }
+
+    public function create()
+    {
+        return view('pages.create');
+    }
+
+    public function sauverproduit()
+    {
+    }
 }
