@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -31,7 +33,7 @@ class PagesController extends Controller
     {
         $produits = DB::table('Products')
             ->orderBy('Product_name', 'asc')
-            ->paginate(1);
+            ->paginate(3);
         return view('pages/services')->with('produits', $produits);
     }
 
@@ -62,5 +64,9 @@ class PagesController extends Controller
         $produit->Product_price = $request->Product_price;
         $produit->description = $request->Product_description;
         $produit->save();
+
+        Session::put('message', 'Le produit ' . $request->Product_name . ' a été ajouté avec succès');
+
+        return redirect('/create');
     }
 }
