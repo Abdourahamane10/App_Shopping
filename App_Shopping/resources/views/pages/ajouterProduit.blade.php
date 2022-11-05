@@ -9,7 +9,7 @@ Sauver produit
     {{ csrf_field() }}
     <div class="form-group">
         <label>Product</label>
-        <input type="text" name="product_name" placeholder="Product Name" class="form-control" required>
+        <input type="text" name="Product_name" placeholder="Product Name" class="form-control" required>
     </div>
     <div class="form-group">
         <label>Product_price</label>
