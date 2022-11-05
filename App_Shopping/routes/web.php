@@ -25,3 +25,7 @@ Route::get('/apropos', 'App\Http\Controllers\PagesController@apropos');
 Route::get('/services', 'App\Http\Controllers\PagesController@services');
 
 Route::get('/show/{id}',  'App\Http\Controllers\PagesController@show');
+
+Route::get('/create', 'App\Http\Controllers\PagesController@create');
+
+Route::post('/sauverproduit', 'App\Http\Controllers\PagesController@sauverproduit');
