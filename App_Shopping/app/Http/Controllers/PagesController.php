@@ -51,7 +51,7 @@ class PagesController extends Controller
     */
     public function creer()
     {
-        return view('pages.ajouterProduit');
+        return view('pages.creerProduit');
     }
 
     /*
@@ -68,5 +68,14 @@ class PagesController extends Controller
         Session::put('message', 'Le produit ' . $request->Product_name . ' a été ajouté avec succès');
 
         return redirect('/create');
+    }
+
+    /*
+    Fonction permettant de modifier un produit
+    */
+    public function edit($id)
+    {
+        $produit = Product::find($id);
+        return view('pages.editerProduit')->with('produit', $produit);
     }
 }
