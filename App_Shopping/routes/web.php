@@ -29,3 +29,7 @@ Route::get('/show/{id}',  'App\Http\Controllers\PagesController@show');
 Route::get('/create', 'App\Http\Controllers\PagesController@creer');
 
 Route::post('/sauverproduit', 'App\Http\Controllers\PagesController@create');
+
+Route::get('/edit/{id}', 'App\Http\Controllers\PagesController@edit');
+
+Route::post('/ModifierProduit', 'App\Http\Controllers\PagesController@modifierProduit');
