@@ -9,6 +9,7 @@ Sauver produit
 {{-- <form action="{{ url('/sauverproduit') }}" method="POST" class="form_horizontal"> --}}
     {{ csrf_field() }}
     <div class="form-group">
+        {{ Form::hidden('id', $produit->id) }}
         {{ Form::label('', 'Product') }}
         {{ Form::text('Product_name', $produit->Product_name, ['placeholder' => 'Product Name', 'class' =>
         'form-control'], 'required') }}
