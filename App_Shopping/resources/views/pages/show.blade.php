@@ -11,7 +11,7 @@ Services
 <p>€ {{ $produit->Product_price }}</p>
 <p>Crée le {{ $produit->created_at }}</p>
 <hr>
-<a href="" class="btn btn-default">Edit</a>
+<a href="/edit/{{ $produit->id }}" class="btn btn-default">Edit</a>
 <a href="" class="btn btn-danger">Delete</a>
 
 @endsection
