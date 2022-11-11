@@ -70,12 +70,26 @@ class PagesController extends Controller
         return redirect('/create');
     }
 
-    /*
-    Fonction permettant de modifier un produit
-    */
     public function edit($id)
     {
         $produit = Product::find($id);
         return view('pages.editerProduit')->with('produit', $produit);
+    }
+
+    /*
+    Fonction permettant de modifier un produit
+    */
+    public function modifierProduit(Request $request)
+    {
+        $produit = Product::find($request->id);
+        $produit->Product_name = $request->Product_name; //input('Product_name');
+        $produit->Product_price = $request->Product_price; //input('Product_price');
+        $produit->description = $request->Product_description; //input('Product_description');
+
+        $produit->update();
+
+        Session::put('message', 'Le produit ' . $request->Product_name . ' a été modifié avec succès');
+
+        return redirect('/services');
     }
 }
