@@ -92,4 +92,16 @@ class PagesController extends Controller
 
         return redirect('/services');
     }
+
+    /**
+     * Fonction qui permet de supprimer un produit
+     */
+    public function delete($id)
+    {
+        $produit = Product::find($id);
+        $produit->delete();
+        Session::put('message', 'Le produit ' . $produit->Product_name . ' a été supprimé avec succès');
+
+        return redirect('/services');
+    }
 }
