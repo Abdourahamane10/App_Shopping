@@ -12,6 +12,6 @@ Services
 <p>Crée le {{ $produit->created_at }}</p>
 <hr>
 <a href="/edit/{{ $produit->id }}" class="btn btn-default">Edit</a>
-<a href="" class="btn btn-danger">Delete</a>
+<a href="/delete/{{ $produit->id }}" class="btn btn-danger">Delete</a>
 
 @endsection
