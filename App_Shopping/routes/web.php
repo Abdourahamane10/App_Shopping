@@ -33,3 +33,5 @@ Route::post('/sauverproduit', 'App\Http\Controllers\PagesController@create');
 Route::get('/edit/{id}', 'App\Http\Controllers\PagesController@edit');
 
 Route::post('/ModifierProduit', 'App\Http\Controllers\PagesController@modifierProduit');
+
+Route::get('/delete/{id}', 'App\Http\Controllers\PagesController@delete');
